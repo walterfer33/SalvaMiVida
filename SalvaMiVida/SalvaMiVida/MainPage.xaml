@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SalvaMiVida.MainPage"
+             xmlns:local="clr-namespace:SalvaMiVida.ViewModel"
+            BackgroundColor="White">
+
+
+
+    <ContentPage.BindingContext>
+        <local:ViewModelMainPage></local:ViewModelMainPage>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <Image Source="Images/Imagen.png"/>
+        <Label Text="Usuario" TextColor="black" />
+        <Entry Keyboard="Text" Text="{Binding Usuario}" TextColor="DarkBlue" BackgroundColor="AliceBlue" ></Entry>
+
+        <Label Text="Contraseña" TextColor="black" ></Label>
+        <Entry Keyboard="Text" IsPassword="True" Text="{Binding Pass}" TextColor="DarkBlue" BackgroundColor="AliceBlue" ></Entry>
+
+        <Button BackgroundColor="red" TextColor="white" Text="Ingresar" Command="{Binding Ingresar}" ></Button>
+
+        <Label Text="{Binding Resultado}" />
+    </StackLayout>
+
+    </ContentPage>
+

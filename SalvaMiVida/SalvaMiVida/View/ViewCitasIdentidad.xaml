@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SalvaMiVida.View.ViewCitasIdentidad"
+             xmlns:local="clr-namespace:SalvaMiVida.ViewModel"
+               BackgroundColor="White"
+    Title="Por Identidad">
+    <ContentPage.BindingContext>
+        <local:ViewModelCitasIdentidad></local:ViewModelCitasIdentidad>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+           <Label Text="Identidad:" TextColor="black"></Label>
+
+            <Entry Text="{Binding Valor}" Keyboard="Numeric" TextColor="DarkBlue" Placeholder="Ingrese la identidad"></Entry>
+
+
+
+            <Button Command="{Binding Enviar}"  Text="Enviar"  BackgroundColor="red" TextColor="white"/>
+
+            <CollectionView
+                ItemsSource="{Binding ListaPacientes}"
+                SelectionMode="Single"
+                SelectedItem="{Binding IdentidadSeleccionada}"
+
+                >
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <StackLayout Padding="3,3">
+
+                            <Frame CornerRadius="10" BackgroundColor="AliceBlue">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup Name="CommonStates">
+                                        <VisualState Name="Selected">
+                                            <VisualState.Setters>
+                                                <Setter Property="BackgroundColor" Value="#4F4F4F"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1.9*" />
+
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding identidad_persona}" 
+                                           Grid.Row="0" 
+                                           Grid.Column="0"
+                                           FontSize="Default" 
+                                           FontAttributes="bold"
+                                           TextColor="black"
+                                           Grid.ColumnSpan="2"
+                                           VerticalOptions="Center"/>
+                                    <Label Text="{Binding nombre_persona}" 
+                                           FontSize="Caption"
+                                           Grid.Column="0"
+                                           Grid.Row="1" 
+                                           TextColor="black"
+                                           Grid.ColumnSpan="2"
+                                           VerticalOptions="Center"
+                                            />
+                                    <Label Text="{Binding fdiag_diagnosticopaciente}" 
+                                           FontSize="Caption"
+                                           Grid.Column="0"
+                                           Grid.Row="1" 
+                                           Grid.ColumnSpan="2"
+                                           TextColor="black"
+                                           VerticalOptions="Center"
+                                            />
+                                    <Label Text="{Binding fproxima_consulta}" 
+                                           FontSize="Caption"
+                                           Grid.Column="0"
+                                           Grid.Row="1" 
+                                           Grid.ColumnSpan="2"
+                                           TextColor="black"
+                                           VerticalOptions="Center"
+                                            />
+                                    <Label Text="{Binding descripcion_diagnostico}" 
+                                           FontSize="Caption"
+                                           Grid.Column="0"
+                                           Grid.Row="1" 
+                                           Grid.ColumnSpan="2"
+                                           VerticalOptions="Center"
+                                            />
+                                    <Label Text="{Binding medico_cunsulta}" 
+                                           FontSize="Caption"
+                                           Grid.Column="0"
+                                           Grid.Row="1" 
+                                           Grid.ColumnSpan="2"
+                                           TextColor="black"
+                                           VerticalOptions="Center"
+                                           x:Name="CITAS_PACIENTES"
+                                            />
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+            <Label Text="Informacion de Citas" TextColor="black"/>
+
+            <Label TextColor="black" Text="{Binding IdentidadSeleccionada.identidad_persona}"/>
+            <Label TextColor="black" Text="{Binding IdentidadSeleccionada.nombre_persona}"/>
+            <Label TextColor="black" Text="{Binding IdentidadSeleccionada.fdiag_diagnosticopaciente}"/>
+            <Label TextColor="black" Text="{Binding IdentidadSeleccionada.fproxima_consulta}"/>
+            <Label TextColor="black" Text="{Binding IdentidadSeleccionada.descripcion_diagnostico}"/>
+            <Label TextColor="black" Text="{Binding IdentidadSeleccionada.medico_consulta}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
