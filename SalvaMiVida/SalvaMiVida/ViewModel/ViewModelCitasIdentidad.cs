@@ -22,7 +22,6 @@ namespace SalvaMiVida.ViewModel
                     RestClient cliente = new RestClient();
                     string url = "https://apex.oracle.com/pls/apex/walterdb/consultas/buscacitasidentidad?busqueda=" + valor;
                     var result = await cliente.GetUrl<ModelCitasIdentidad>(url);
-
                     if (result != null)
                     {
 
@@ -75,9 +74,9 @@ namespace SalvaMiVida.ViewModel
         }
         
 
-        ObservableCollection<Item> listaPacientes = new ObservableCollection<Item>();
+        ObservableCollection<ItemIdentidad> listaPacientes = new ObservableCollection<ItemIdentidad>();
 
-        public ObservableCollection<Item> ListaPacientes { get => listaPacientes; }
+        public ObservableCollection<ItemIdentidad> ListaPacientes { get => listaPacientes; }
 
 
         public Command Enviar { get; }

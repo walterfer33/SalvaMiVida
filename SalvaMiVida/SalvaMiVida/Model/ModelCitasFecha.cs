@@ -26,7 +26,7 @@ namespace SalvaMiVida.Model
 
     public class ModelCitasFecha
     {
-        public List<Item> items { get; set; }
+        public List<Itemfecha> items { get; set; }
         public bool hasMore { get; set; }
         public int limit { get; set; }
         public int offset { get; set; }

@@ -16,5 +16,10 @@ namespace SalvaMiVida.View
         {
             InitializeComponent();
         }
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            InitializeComponent();
+        }
     }
 }

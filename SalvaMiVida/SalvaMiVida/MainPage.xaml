@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SalvaMiVida.MainPage"
              xmlns:local="clr-namespace:SalvaMiVida.ViewModel"
+             NavigationPage.HasNavigationBar="False"
             BackgroundColor="White">
 
 
@@ -11,12 +12,12 @@
         <local:ViewModelMainPage></local:ViewModelMainPage>
     </ContentPage.BindingContext>
     <StackLayout>
-        <Image Source="Images/Imagen.png"/>
+        <Image Source="Imagen.png"  WidthRequest="190" HeightRequest="190"/>
         <Label Text="Usuario" TextColor="black" />
-        <Entry Keyboard="Text" Text="{Binding Usuario}" TextColor="DarkBlue" BackgroundColor="AliceBlue" ></Entry>
+        <Entry Keyboard="Text" TextTransform="Uppercase" Text="{Binding Usuario}" TextColor="DarkBlue" BackgroundColor="AliceBlue" ></Entry>
 
         <Label Text="Contraseña" TextColor="black" ></Label>
-        <Entry Keyboard="Text" IsPassword="True" Text="{Binding Pass}" TextColor="DarkBlue" BackgroundColor="AliceBlue" ></Entry>
+        <Entry Keyboard="Text" TextTransform="Uppercase" IsPassword="True" Text="{Binding Pass}" TextColor="DarkBlue" BackgroundColor="AliceBlue" ></Entry>
 
         <Button BackgroundColor="red" TextColor="white" Text="Ingresar" Command="{Binding Ingresar}" ></Button>
 

@@ -3,5 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>Samsung SM-A217M</SelectedDevice>
     <ActiveDebugProfile>Samsung SM-A217M</ActiveDebugProfile>
+    <AndroidDesignerPreferredTheme>MainTheme</AndroidDesignerPreferredTheme>
   </PropertyGroup>
 </Project>

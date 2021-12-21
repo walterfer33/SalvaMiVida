@@ -6,7 +6,7 @@ using Xamarin.Forms;
 using System.Threading.Tasks;
 using SalvaMiVida.Service;
 using SalvaMiVida.Model;
-using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;   
 using System.Globalization;
 
 
@@ -91,9 +91,9 @@ namespace SalvaMiVida.ViewModel
         }
 
 
-        ObservableCollection<Item> listaPacientes = new ObservableCollection<Item>();
+        ObservableCollection<Itemfecha> listaPacientes = new ObservableCollection<Itemfecha>();
 
-        public ObservableCollection<Item> ListaPacientes { get => listaPacientes; }
+        public ObservableCollection<Itemfecha> ListaPacientes { get => listaPacientes; }
 
 
         public Command Enviar { get; }

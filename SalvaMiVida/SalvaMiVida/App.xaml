@@ -3,6 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SalvaMiVida.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="red"/>
+                <Setter Property="BarTextColor" Value="white"   />
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

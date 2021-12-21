@@ -13,7 +13,6 @@ namespace SalvaMiVida.ViewModel
     {
         public ViewModelMainPage()
         {
-
             Ingresar = new Command(async () => {
 
 

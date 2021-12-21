@@ -12,22 +12,22 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <Label Text="Fecha Inicio:" TextColor="black"></Label>
+            <Label Text="Fecha Inicial:" TextColor="black"></Label>
 
             <DatePicker 
                    MinimumDate="01-01-2021"
                     MaximumDate="10-12-2050"
                     Date="{Binding FechaInicio}"
-                          TextColor="black"
+                          TextColor="DarkBlue"
                           FontSize="17"
                     Format="D" />
 
-            <Label Text="Fecha Fin:" TextColor="black"></Label>
+            <Label Text="Fecha Final:" TextColor="black"></Label>
             <DatePicker 
                    MinimumDate="01-01-2021"
                     MaximumDate="10-12-2050"
                     Date="{Binding FechaFin}"
-                          TextColor="black"
+                          TextColor="DarkBlue"
                          FontSize="17"
                     Format="D" />
 
@@ -38,16 +38,14 @@
             <CollectionView
                 ItemsSource="{Binding ListaPacientes}"
                 SelectionMode="Single"
-                SelectedItem="{Binding IdentidadSeleccionada}"
-
-                >
+                SelectedItem="{Binding FechaSeleccionada}">
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
 
                         <StackLayout Padding="3,3">
 
-                            <Frame CornerRadius="10" BackgroundColor="AliceBlue" >
+                            <Frame CornerRadius="10" BackgroundColor="AliceBlue">
                                 <VisualStateManager.VisualStateGroups>
                                     <VisualStateGroup Name="CommonStates">
                                         <VisualState Name="Selected">
@@ -59,60 +57,37 @@
                                 </VisualStateManager.VisualStateGroups>
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="1.9*" />
+                                        <RowDefinition Height="*" />
 
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="{Binding identidad_persona}" 
-                                           Grid.Row="0" 
-                                           Grid.Column="0"
-                                           FontSize="Default" 
-                                            TextColor="black"
-                                           FontAttributes="bold"
-                                           Grid.ColumnSpan="2"
-                                           VerticalOptions="Center"/>
                                     <Label Text="{Binding nombre_persona}" 
                                            FontSize="Caption"
                                            Grid.Column="0"
-                                           Grid.Row="1" 
-                                           TextColor="black"
-                                           Grid.ColumnSpan="2"
-                                           VerticalOptions="Center"
-                                            />
-                                    <Label Text="{Binding fdiag_diagnosticopaciente}" 
-                                           FontSize="Caption"
-                                           Grid.Column="0"
-                                           Grid.Row="1" 
-                                           TextColor="black"
-                                           Grid.ColumnSpan="2"
-                                           VerticalOptions="Center"
-                                            />
-                                    <Label Text="{Binding fproxima_consulta}" 
-                                           FontSize="Caption"
-                                           Grid.Column="0"
-                                           Grid.Row="1" 
-                                           TextColor="black"
-                                           Grid.ColumnSpan="2"
+                                           Grid.Row="0" 
+                                           TextColor="DarkBlue"
+                                           Grid.ColumnSpan="1"
                                            VerticalOptions="Center"
                                             />
                                     <Label Text="{Binding descripcion_diagnostico}" 
                                            FontSize="Caption"
-                                           Grid.Column="0"
-                                           Grid.Row="1" 
-                                           TextColor="black"
-                                           Grid.ColumnSpan="2"
+                                           Grid.Column="1"
+                                           Grid.Row="0" 
+                                           Grid.ColumnSpan="1"
+                                           TextColor="DarkBlue"
                                            VerticalOptions="Center"
                                             />
-                                    <Label Text="{Binding medico_cunsulta}" 
+                                    <Label Text="{Binding fproxima_consulta}" 
                                            FontSize="Caption"
-                                           Grid.Column="0"
-                                           Grid.Row="1" 
-                                           TextColor="black"
-                                           Grid.ColumnSpan="2"
+                                           Grid.Column="2"
+                                           Grid.Row="0" 
+                                           Grid.ColumnSpan="1"
+                                           TextColor="DarkBlue"
                                            VerticalOptions="Center"
-                                           x:Name="CITAS_PACIENTES"
                                             />
                                 </Grid>
                             </Frame>
@@ -122,14 +97,19 @@
 
             </CollectionView>
 
-            <Label Text="Informacion de Citas" TextColor="black"/>
-
-            <Label TextColor="black" Text="{Binding FechaSeleccionada.identidad_persona}"/>
-            <Label TextColor="black" Text="{Binding FechaSeleccionada.nombre_persona}"/>
-            <Label TextColor="black" Text="{Binding FechaSeleccionada.fdiag_diagnosticopaciente}"/>
-            <Label TextColor="black" Text="{Binding FechaSeleccionada.fproxima_consulta}"/>
-            <Label TextColor="black" Text="{Binding FechaSeleccionada.descripcion_diagnostico}"/>
-            <Label TextColor="black" Text="{Binding FechaSeleccionada.medico_consulta}"/>
+            <Label FontSize="18" Text="Informacion de Citas" TextColor="black"/>
+            <Label TextColor="black" Text="Identidad"/>
+            <Label TextColor="DarkBlue" Text="{Binding FechaSeleccionada.identidad_persona}"/>
+            <Label TextColor="black" Text="Nombre"/>
+            <Label TextColor="DarkBlue" Text="{Binding FechaSeleccionada.nombre_persona}"/>
+            <Label TextColor="black" Text="Fecha Diagnostico"/>
+            <Label TextColor="DarkBlue" Text="{Binding FechaSeleccionada.fdiag_diagnosticopaciente}"/>
+            <Label TextColor="black" Text="Fecha Proxima Cita"/>
+            <Label TextColor="DarkBlue" Text="{Binding FechaSeleccionada.fproxima_consulta}"/>
+            <Label TextColor="black" Text="Diagnostico"/>
+            <Label TextColor="DarkBlue" Text="{Binding FechaSeleccionada.descripcion_diagnostico}"/>
+            <Label TextColor="black" Text="Medico con quien tiene cita"/>
+            <Label TextColor="DarkBlue" Text="{Binding FechaSeleccionada.medico_consulta}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
